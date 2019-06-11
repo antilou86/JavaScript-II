@@ -27,24 +27,68 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function (anything) {
+  //just to test my code while i'm working.
+  console.log(anything);
+});
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+
+last(items, function (last) {
+  //just to test my code while i'm working.
+  console.log(last);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+
+sumNums(10, 5, function (sumResult) {
+  //just to test my code while i'm working.
+  console.log(sumResult);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+
+multiplyNums(10, 5, function (multiplexer) {
+  //just to test my code while i'm working.
+  //also tried without the semicolon just to see how it felt
+  console.log(multiplexer)
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  if (list.some(function (element) { return element === item; })) {
+    cb(true);
+  } else {
+    cb(false);
+  }
+};
+//testing double call back function.
+//who am i even?
+contains('rubber band', items, function (trueOrFalse) {
+  console.log(trueOrFalse);
+  //false
+});
+//testing double call back function.
+contains('Gum', items, function (trueOrFalse) {
+  console.log(trueOrFalse);
+  //true
+});
+
+
 
 /* STRETCH PROBLEM */
 
