@@ -11,9 +11,15 @@ console.log(pleaseWork())
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
+  let count = 1;
   // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
+  return newCounter = () => {
+    return ++count;
+    }
+  };
+  const someThing = counter();
+  console.log(someThing());
+  console.log(someThing());
 // newCounter(); // 1
 // newCounter(); // 2
 
